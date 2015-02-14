@@ -6,7 +6,7 @@ var sc scanner.Scanner
 func ReadInt(n *Int) bool {
   tok := sc.Scan()
   if tok != scanner.EOF {
-    fmt.Sscan(sc.TokenText(), &n)
+    fmt.Sscan(sc.TokenText(), n)
     return true
   } else {
     return false
