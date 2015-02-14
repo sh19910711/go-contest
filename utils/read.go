@@ -3,25 +3,23 @@ package utils
 // @end_cut
 var sc scanner.Scanner
 
-func ReadInt() (Int, error) {
-  var res Int
+func ReadInt(n *Int) bool {
   tok := sc.Scan()
   if tok != scanner.EOF {
-    fmt.Sscan(sc.TokenText(), &res)
-    return res, nil
+    fmt.Sscan(sc.TokenText(), &n)
+    return true
   } else {
-    return -1, io.EOF
+    return false
   }
 }
 
-func ReadString() (string, error) {
-  var res string
+func ReadString(s *string) bool {
   tok := sc.Scan()
   if tok != scanner.EOF {
-    res = sc.TokenText()
-    return res, nil
+    *s = sc.TokenText()
+    return true
   } else {
-    return "", nil
+    return false
   }
 }
 
