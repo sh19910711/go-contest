@@ -1,5 +1,6 @@
 {
   "name": "contest.go",
   "description": "",
-  "license": "MIT"
+  "license": "MIT",
+  "main": "src"
 }
