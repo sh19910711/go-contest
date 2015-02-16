@@ -14,6 +14,9 @@ install:
 script:
   - set -o pipefail
   - go test -v ./... | sed ''/FAIL/s//$(printf "\033[31mFAIL\033[0m")/''
+  - gem install social_snippet
+  - sspm install ./
+  - diff <(echo '// @snip <contest.go:main.go>' | ssnip | grep -v @snippet) <(cd src; cat main.go | ssnip | grep -v @snippet)
 
 cache:
   directories:
