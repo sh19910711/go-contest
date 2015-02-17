@@ -2,8 +2,8 @@ package utils // @cut
 import "fmt" // @cut
 import "io" // @cut
 
-func ReadInt(n *Int) bool {
-  _, err := fmt.Fscan(in, n)
+func Read(a ...interface{}) bool {
+  _, err := fmt.Fscan(in, a...)
   return err != io.EOF
 }
 
