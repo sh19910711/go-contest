@@ -13,7 +13,7 @@ func Println(a ...interface{}) {
 func TestReadInt(t *testing.T) {
   in = header.Strin("123")
   var n Int
-  ReadInt(&n)
+  Read(&n)
   if n != 123 {
     t.Fail()
   }
@@ -34,13 +34,13 @@ func AssertEqualIntSlice(a []Int, b []Int) bool {
 func TestReadIntSlice(t *testing.T) {
   in = header.Strin("5 1 2 3 4 5")
   var n Int
-  ReadInt(&n)
+  Read(&n)
   if n != 5 {
     t.Fail()
   }
   a := make([]Int, n)
   for i := Int(0); i < n; i += 1 {
-    ReadInt(&a[i])
+    Read(&a[i])
   }
   expected := []Int{1, 2, 3, 4, 5}
   if ! AssertEqualIntSlice(a, expected) {
@@ -58,13 +58,13 @@ func TestReadIntSliceMultiLines(t *testing.T) {
 `
   in = header.Strin(input)
   var n Int
-  ReadInt(&n)
+  Read(&n)
   if n != 5 {
     t.Fail()
   }
   a := make([]Int, n)
   for i := Int(0); i < n; i += 1 {
-    ReadInt(&a[i])
+    Read(&a[i])
   }
   expected := []Int{1, 2, 3, 4, 5}
   if ! AssertEqualIntSlice(a, expected) {
