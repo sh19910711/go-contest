@@ -4,5 +4,6 @@ package main // @cut
 // @snip <./utils/stream.go>
 
 func main() {
+  // in = Stdin()
 }
 
