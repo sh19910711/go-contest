@@ -5,7 +5,7 @@ import "os"
 import "strings"
 
 func Println(args ...interface{}) {
-  fmt.Println(args)
+  fmt.Println(args...)
 }
 
 func Stdin() io.Reader {
